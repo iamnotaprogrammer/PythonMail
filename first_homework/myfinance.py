@@ -5,6 +5,10 @@ class FormatException(Exception):
     pass
 
 
+class TotalException(Exception):
+    pass
+
+
 def my_round(f):
     def wrapper(value):
         return f(round(value, 2))
@@ -64,7 +68,8 @@ class Account(object):
     def add_trunsaction(self, charge):
         self._charges.append(charge)
         self._total = max(self._total + charge.value, 0)
-
+        # if self._total < 0:
+        #     raise TotalException('total value is incorrect cannot be less then 0 ')
 
 if __name__ == '__main__':
     val = raw_input()
