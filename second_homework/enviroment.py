@@ -57,7 +57,7 @@ print hostname_ip
 httpd = make_server (
     'localhost',  # The host name
     8051, # A port number where to wait for the request
-    application2 # The application object name, in this case a function
+    application # The application object name, in this case a function
 )
 
 httpd.handle_request()
