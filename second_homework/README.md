@@ -1,7 +1,7 @@
 
 # Homework consists of main.py MyWSGIApplication.py and events.py modules
 
-# How Use:
+# How To  Use:
 
 # ./main 
 
