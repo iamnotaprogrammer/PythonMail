@@ -1,6 +1,5 @@
 #!/usr/bin/python3.5
 
-
 from wsgiref.simple_server import make_server
 from MyWSGIApplication import MyWSGIApplication
 
