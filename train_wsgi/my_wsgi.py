@@ -24,6 +24,7 @@ def events(max_delay, limit):
 
 event_gen = events(10, 5)
 
+
 class  MyWSGIApplication(object):
     """docstring for  SimpleWSGIApplication"""
 
