@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+finance_env/
 env/
 build/
 develop-eggs/
