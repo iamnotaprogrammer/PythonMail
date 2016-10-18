@@ -1,18 +1,16 @@
 import sys
 import os
-cur_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(cur_dir)
-import random 
-from  my_modules import myfinance
-dir(myfinance)
-# from myfinance import Account
-# import myfinance
+import random
 import time
 import datetime
 
 from django.shortcuts import render
 from django.http import HttpResponse
 
+cur_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(cur_dir)
+
+from  my_modules import myfinance
 
 start_url = '/'
 charges_page = '/charges'
@@ -27,7 +25,7 @@ def hello_world(request):
 def start(request):
     response = HttpResponse()
     response.write("<title>Home page</title>")
-    response.write("<style> .text { text-align:  center; }</style>")
+    response.write("<style> p { text-align:  center; }</style>")
     response.write("<div class = 'text'><p>WELCOM TO MY SITE !!!</p><div>")
     response.write("<p><a href='{0}'>Charges Page</a></p>".format(charges_page))
     return response
@@ -42,7 +40,6 @@ def charges(request):
     response.write('{0}'.format(acc))
     response.write("<p><a href='{0}'><b>Start Page</b></a></p>".format(start_url))
     response.write("<head></html>")
-
     response.write(make_table())
     return response
 
@@ -81,7 +78,7 @@ def make_table():
     raw = "<tr>{0}</tr>"
 
     table_name = "MY RANDOM TABLE"
-    columns = ["Data", 'Time', 'Name', 'Lastname', 'Mobile', 'User card number', 'Recipient']
+    columns = ["Date", 'Time', 'Name', 'Lastname', 'Mobile', 'User card number', 'Recipient']
     template = caption.format(table_name)+thead.format(make_raw(columns))
     raws = []
     for i in range(20):
