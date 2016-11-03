@@ -55,16 +55,15 @@ def transaction(request):
     positive = list()
     negative = list()
     for date, value in gen:
-        if value < 0:
+        if value >= 0:
             temp = Transaction(date=date, value=value)
             positive.append(temp)
         else:
             temp = Transaction(date=date, value=value)
             negative.append(temp)
     context = {
-        'names': ['positive', 'negative'],
         'columns': ['Date', 'Value'],
-        'transactions': {'positive': positive, 'negative': negative},
+        'transactions': {'IN': positive, 'OUT': negative},
     }
 
     return render(request, 'finance/base.html', context)

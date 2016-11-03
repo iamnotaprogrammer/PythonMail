@@ -1,0 +1,34 @@
+<html>
+	<header></header>
+	<title></title>
+	<body>
+		{% for name, transaction in transactions.items %}
+			{% if transaction|length == 0 %}
+				<p>table {{name}} is absent</p>
+			{% else %}
+				
+				<table  border="3" >
+					<caption>{{name}}</caption>
+					<thead>
+							<tr>
+								{% for col in columns%}
+									<td>{{col}}</td>
+								{%endfor%}
+							</tr>
+					</thead>
+							{% for el in  transaction %}
+							<tr>
+									<td>{{el.date}}</td>
+									<td>{{el.value}}</td>
+							</tr>
+							{%endfor%}
+				</table>
+			{% endif %}
+
+		{%endfor%}
+
+
+
+	</body>
+
+</html>
