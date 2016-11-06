@@ -1,5 +1,4 @@
 from django.conf.urls import url
-from finance.views import hello_world
 from finance.views import start
 from finance.views import homepage
 from finance.views import charges
@@ -9,8 +8,7 @@ from finance.views import new_charge
 from finance.views import error_page
 
 urlpatterns = [
-    url(r'^hello$', hello_world),
-    url(r'^charges$', charges),
+    url(r'^charges$', charges, name='charges'),
     url(r'^transactions$', transaction, name='transactions'),
     url(r'^newcharge$', new_charge, name='new_charge'),
     url(r'^success$', good_answer, name='success'),

@@ -5,15 +5,14 @@ import time
 import datetime
 from collections import namedtuple
 
-
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.template import loader, Context
 
+
 cur_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(cur_dir)
-
 
 import forms
 from my_modules import myfinance
@@ -27,29 +26,8 @@ acc = myfinance.Account(charge)
 Transaction = namedtuple("Transaction", ['date', 'value'])
 
 
-def hello_world(request):
-    return HttpResponse('<h1>Hello, World!</h1>')
-
-
 def homepage(request):
     return render(request, 'finance/base.html')
-
-
-# def new_charge(request):
-#     charge_form = None
-#     success = None
-
-#     if request.method == 'POST':
-#         charge_form = forms.ChargeForm(request.POST)
-#         if charge_form.is_valid():
-#             success = True
-    
-#     if request.method == 'GET':
-#         charge_form = forms.ChargeForm()
-#         success = False
-
-#     context = {'form': charge_form}
-#     return render(request, 'finance/create_charges.html', context)
 
 
 def start(request):
@@ -103,7 +81,6 @@ def new_charge(request):
         charge_form = forms.ChargeForm()
         context = {'form': charge_form}
         return render(request, 'finance/create_charges.html', context)
-
     return HttpResponseRedirect('/error')
 
 
@@ -115,7 +92,8 @@ def error_page(request):
 
 
 def good_answer(request):
-    message = "Sorry, but this app cannot work with database in this version: \
-        Todo to develop database interface"
+    message = " Transaction well done!!!   \
+                Sorry, but this app cannot work with database in this version: \
+                Todo to develop database interface"
     context = {'message': message} 
     return render(request, 'finance/succsess.html', context)
