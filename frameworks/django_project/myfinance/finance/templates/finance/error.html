@@ -8,30 +8,28 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/myapp.css' %}">
-    <title>Start Page</title>
+   
     <meta charset="utf-8">
     <meta name="description" content="Technoatom course from Mail Group in Mephi!!! (Test project)">
 </head>
-<title>{% block title %} Home Page {% endblock %}</title>
-<body class='common'>
+<title>Error Page</title>
+<body class='my_error_page'>
     <div class = 'references'>
         <ul class="list-group">
             {% url 'finance:start_page'  as start_page %}
             {% url  'finance:transactions' as transactions_page %}
             {% url 'finance:new_charge' as new_charge %}
             {% url 'finance:homepage' as homepage %}
-            {% url 'finance:error_page' as error_page %}
 
-        <li class="list-group-item"><a href={{start_page}}>Start page</a><span class="badge">without templates</span></li>
-        <li class="list-group-item"><a href={{homepage}}>Home Page </a></li>
-        <li class="list-group-item"><a href={{transactions_page}}>Random transactions </a></li>
-        <li class="list-group-item"> <a href={{new_charge}}>Create new Charge </a><span class="badge">only form</span></li>
-        <li class="list-group-item"><a href={{error_page}}>Error Page</a></li>
+             <li class="list-group-item"><a href={{start_page}}>Start page </a></li>
+             <li class="list-group-item"><a href={{homepage}}>Home Page </a></li>
+             <li class="list-group-item"><a href={{transactions_page}}>Random transactions </a></li>
+             <li class="list-group-item"> <a href={{new_charge}}>Create new Charge </a></li>
         </ul>
     </div>
-        {% block content %}{% endblock %}
+        <h1>{{message}}</h1>
 </body>
 <footer class = 'navbar-fixed-bottom'>
-    <p ><b>Author :  Ivan Smirnov</b>/p>
+    <p >Author :  Ivan Smirnov</p>
 </footer>
 </html>

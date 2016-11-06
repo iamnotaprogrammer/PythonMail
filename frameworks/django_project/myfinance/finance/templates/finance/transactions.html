@@ -1,0 +1,29 @@
+{% extends "finance/base.html" %}
+
+{% block content %}
+		{% for name, transaction in transactions.items %}
+			<div class="table-responsive">
+			{% if transaction|length == 0 %}
+				<p>table {{name}} is absent</p>
+			{% else %}
+				<div class="col-sm-4">
+				<table class="table table-condensed table-borderless ">
+					<caption>{{name}}</caption>
+					<thead>
+							<tr>
+								{% for col in columns%}
+									<td>{{col}}</td>
+								{%endfor%}
+							</tr>
+					</thead>
+							{% for el in  transaction %}
+							<tr>
+									<td>{{el.date}}</td>
+									<td>{{el.value}}</td>
+							</tr>
+							{%endfor%}
+				</table>
+				</div>
+			{% endif %}
+		{%endfor%}
+{% endblock %}

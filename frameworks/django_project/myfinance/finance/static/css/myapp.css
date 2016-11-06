@@ -1,0 +1,22 @@
+.form{
+        width: 200;
+}
+.references{
+        width: 300;
+}
+
+.transaction_tables{
+    width: 500;
+}
+.my_error_page{
+
+    background:  url('/static/image/secret.jpg') no-repeat;
+    background-size: 100%;
+
+}
+.common{
+
+    background:  url('/static/image/fon.jpg') no-repeat;
+    background-size: 100%;
+
+}
