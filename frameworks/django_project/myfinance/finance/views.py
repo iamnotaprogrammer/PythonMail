@@ -86,7 +86,7 @@ def new_charge(request):
 
 def error_page(request):
     message = "It is the secret page. \
-                You shouldn'd talk anybody about it. I hope it will only our secret :))"
+                You shouldn't talk anybody about it. I hope it will only our secret :))"
     context = {'message': message}
     return render(request, 'finance/error.html', context)
 
