@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/myapp.css' %}">
-    <title>Start Page</title>
     <meta charset="utf-8">
     <meta name="description" content="Technoatom course from Mail Group in Mephi!!! (Test project)">
 </head>
 <title>{% block title %} Home Page {% endblock %}</title>
 <body class='common'>
     <div class = 'references'>
-        <ul class="list-group">
+        <ul class="list-group my-group">
             {% url 'finance:start_page'  as start_page %}
             {% url  'finance:transactions' as transactions_page %}
             {% url 'finance:new_charge' as new_charge %}
             {% url 'finance:homepage' as homepage %}
             {% url 'finance:error_page' as error_page %}
             {% url 'finance:charges' as charges_page %}
+            {% url 'finance:auth' as auth %}
+            {% url 'finance:registration' as registration_account %}
+            {% url 'finance:reg_user' as registration_user %}
+            
 
         <li class="list-group-item"><a href={{start_page}}>Start page</a><span class="badge">without templates</span></li>
         <li class="list-group-item"><a href={{charges_page}}>Charges page</a><span class="badge">without templates</span></li>
@@ -29,9 +32,14 @@
         <li class="list-group-item"><a href={{transactions_page}}>Random transactions </a></li>
         <li class="list-group-item"> <a href={{new_charge}}>Create new Charge </a><span class="badge">only form</span></li>
         <li class="list-group-item"><a href={{error_page}}>Error Page</a></li>
+        <li class="list-group-item"><a href={{auth}}>Authorization</a></li>
+        <li class="list-group-item"><a href={{registration_account}}>Registration Account</a></li>
+        <li class="list-group-item"><a href={{registration_user}}>Registration new User</a></li>
         </ul>
+
     </div>
-        {% block content %}{% endblock %}
+    <div class = 'content'>{% block content %}{% endblock %}</div>
+        
 </body>
 <footer class = 'navbar-fixed-bottom'>
     <p><b>Author :  Ivan Smirnov</b></p>
