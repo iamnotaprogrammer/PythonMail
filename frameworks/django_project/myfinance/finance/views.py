@@ -27,6 +27,10 @@ Transaction = namedtuple("Transaction", ['date', 'value'])
 
 
 
+def startpage(request):
+    return render(request, 'finance/startpage.html')
+
+
 def reg_user(request):
     if request.method == 'POST':
         user_form = forms.UserRegestrationForm(request.POST)

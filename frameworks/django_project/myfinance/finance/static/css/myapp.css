@@ -1,8 +1,85 @@
+
+@font-face {
+    font-family: myFont;
+    src: url(/static/fonts/Archangelsk.woff);
+}
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+
+
+body, html {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+}
+
+.container p {
+    font-size: 250%;
+    width: 400px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    font-family: myFont;
+}
 .form{
         width: 200;
 }
 .references{
-        width: 300;
+
+        background-color: transparent;
+        margin: auto;
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        top: 50%;
+        margin-top: 150px; 
 }
 
 .transaction_tables{
@@ -14,9 +91,18 @@
     background-size: 100%;
 
 }
-.common{
+/*.common{
 
     background:  url('/static/image/fon.jpg') no-repeat;
     background-size: 100%;
 
+}*/
+.content{
+    vertical-align: top;
+    float:          left;
+
+}
+.my-group{
+
+    background-color: transparent;
 }

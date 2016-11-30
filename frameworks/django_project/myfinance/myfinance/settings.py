@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'finance',
     'bootstrapform',
     'bootstrap3',
+
 ]
 
 MIDDLEWARE = [

@@ -2,7 +2,12 @@
         width: 200;
 }
 .references{
-        width: 300;
+
+        background-color: transparent;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        top: 50%;
 }
 
 .transaction_tables{
@@ -19,4 +24,13 @@
     background:  url('/static/image/fon.jpg') no-repeat;
     background-size: 100%;
 
+}
+.content{
+    vertical-align: top;
+    float:          left;
+
+}
+.my-group{
+
+    background-color: transparent;
 }

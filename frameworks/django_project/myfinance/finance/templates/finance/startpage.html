@@ -1,0 +1,51 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/myapp.css' %}">
+    <meta charset="utf-8">
+    <meta name="description" content="Technoatom course from Mail Group in Mephi!!! (Test project)">
+</head>
+<title>{% block title %} Start page {% endblock %}</title>
+<body class='common'>
+
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="/static/video/MP4/Everything-is-right.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="/static/video/WEBM/Everything-is-right.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="/static/image/fon.jpg" alt="">
+        </div>
+
+
+<div class='container'>
+   
+        <ul class="list-group my-group">
+            {% url 'finance:auth'  as user_autorisation %}
+            {% url  'finance:reg_user' as user_registration %}
+            {% url 'finance:admin' as admin %}
+        
+        <li class="list-group-item"><a href={{user_autorisation}}><p>Sing up</p></a></li>
+        <li class="list-group-item"><a href={{user_registration}}><p>Login</p></a></li>
+        <li class="list-group-item"><a href={{admin}}><p>Admins</p></a></li>
+        </ul>
+</div>
+    <div class = 'content'>{% block content %}{% endblock %}</div>
+        
+</body>
+<footer class = 'navbar-fixed-bottom'>
+    <p><b>Author :  Ivan Smirnov</b></p>
+</footer>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/static/js/video.js"></script>
+</html>
